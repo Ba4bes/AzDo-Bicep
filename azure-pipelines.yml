@@ -50,7 +50,7 @@ stages:
               inlineScript: |
                 az group create --name $(ResourceGroupName) --location $(location)
                 az deployment group create  `
-                --template-file $(Build.SourcesDirectory)/main.bicep `
+                --template-file $(Build.SourcesDirectory)/main.json `
                 --parameters $(Build.SourcesDirectory)/main.parameters.json `
                 --resource-group $(ResourceGroupName) `
                 --parameters resourcePrefix=$(resourceprefix)
