@@ -15,8 +15,7 @@ param groupIds array = [
     'blob'
 ]
 
-var privateDnsZoneName = '${privateEndpointName}.blob.core.windows.net'
-
+var privateDnsZoneName = '${privateEndpointName}.blob.${environment().suffixes.storage}'
 
 resource privateEndpoint 'Microsoft.Network/privateEndpoints@2020-11-01' = {
     name: privateEndpointName
